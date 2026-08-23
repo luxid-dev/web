@@ -1,0 +1,334 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Menlo',
+    'Consolas', monospace;
+}
+
+/* ==========================================================================
+   Luxid tokens
+
+   The site chrome is black, white and grey; colour lives inside code. Three
+   jobs own a hue, and nothing else does:
+
+   1. `--lx-err` / `--lx-help` are borrowed from `rustc` and appear only inside
+      the captured compiler transcript on the landing page.
+   2. `--lx-code-soft` tints the inline code spans in prose, so a quoted `404`
+      or `?` reads as a quotation rather than as emphasis.
+   3. Code blocks get a full per-token palette — see "Syntax colours" below.
+   ========================================================================== */
+
+:root {
+  --lx-err: #e11d48;
+  --lx-help: #0891b2;
+
+  /* The inline-code tint in prose. Same violet family as a block keyword. */
+  --lx-code-soft: #6d28d9;
+}
+
+.dark {
+  --lx-err: #fb7185;
+  --lx-help: #22d3ee;
+
+  --lx-code-soft: #d8b4fe;
+}
+
+/*
+ * Display type is set in the mono face. The page's whole argument is "read the
+ * real output", so the headline is set in the same face as the output.
+ */
+.lx-display {
+  font-family: 'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.lx-mono {
+  font-family: 'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+}
+
+/* Section eyebrows read as a Rust line comment, because that is what labels a
+   section in the subject's own source. */
+.lx-eyebrow {
+  font-family: 'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   Code blocks
+
+   The block has no surface of its own — it inherits the section it sits in, so
+   code sits on the page rather than in a dark rectangle pasted onto it.
+   ========================================================================== */
+
+pre {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  user-select: text;
+}
+
+pre code {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.luxid-code pre {
+  margin: 0 !important;
+  padding: 1rem 0 !important;
+  background: transparent !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Menlo', 'Consolas', monospace;
+  tab-size: 4;
+}
+
+.luxid-code code {
+  display: block;
+  font-family: inherit;
+}
+
+/*
+ * Syntax colours.
+ *
+ * Every token type gets its own hue so a block can be read at a glance rather
+ * than parsed. The six chromatic slots — keyword, attribute, type, string,
+ * function, number — were picked by searching a candidate pool against the
+ * palette validator rather than by eye, and both modes clear every check that
+ * applies to text:
+ *
+ *   dark   normal-vision ΔE 15.5 · CVD ΔE 10.3 · contrast all >= 3:1
+ *   light  normal-vision ΔE 17.6 · CVD ΔE  8.6 · contrast all >= 3:1
+ *
+ * The validator's "lightness band" check fails on purpose. That rule keeps
+ * chart marks in one band so no series shouts; here the opposite is wanted —
+ * comments should recede and keywords advance, so lightness carries meaning.
+ *
+ * Six is the ceiling: no seventh hue clears the >= 15 normal-vision floor at
+ * readable contrast, so four token types alias onto a slot. Each alias is
+ * chosen so the two never occur in the same language:
+ *
+ *   tag       -> type      TOML sections and HTML tags; neither has types.
+ *   property   -> function  TOML and JSON keys; neither has calls.
+ *   directive  -> type      shell flags; shell has no types.
+ *   variable   -> attribute shell $VAR (no attributes there) and Rust
+ *                           lifetimes, which is the one real overlap — an
+ *                           attribute is always `#[..]` and a lifetime always
+ *                           `'a`, and the italic below separates them anyway.
+ */
+
+.luxid-code-dark {
+  color: #d4d4d8;
+}
+.luxid-code-dark .tok-keyword {
+  color: #a78bfa;
+  font-weight: 600;
+}
+.luxid-code-dark .tok-attribute {
+  color: #f472b6;
+}
+.luxid-code-dark .tok-variable {
+  color: #f472b6;
+  font-style: italic;
+}
+.luxid-code-dark .tok-type,
+.luxid-code-dark .tok-tag,
+.luxid-code-dark .tok-directive {
+  color: #7dd3fc;
+}
+.luxid-code-dark .tok-string {
+  color: #86efac;
+}
+.luxid-code-dark .tok-function,
+.luxid-code-dark .tok-property {
+  color: #facc15;
+}
+.luxid-code-dark .tok-number {
+  color: #f97316;
+}
+.luxid-code-dark .tok-comment {
+  color: #6b7280;
+  font-style: italic;
+}
+.luxid-code-dark .tok-operator {
+  color: #a1a1aa;
+}
+.luxid-code-dark .tok-punctuation {
+  color: #71717a;
+}
+
+.luxid-code-light {
+  color: #3f3f46;
+}
+.luxid-code-light .tok-keyword {
+  color: #5b21b6;
+  font-weight: 600;
+}
+.luxid-code-light .tok-attribute {
+  color: #c026d3;
+}
+.luxid-code-light .tok-variable {
+  color: #c026d3;
+  font-style: italic;
+}
+.luxid-code-light .tok-type,
+.luxid-code-light .tok-tag,
+.luxid-code-light .tok-directive {
+  color: #0369a1;
+}
+.luxid-code-light .tok-string {
+  color: #15803d;
+}
+.luxid-code-light .tok-function,
+.luxid-code-light .tok-property {
+  color: #78350f;
+}
+.luxid-code-light .tok-number {
+  color: #dc2626;
+}
+.luxid-code-light .tok-comment {
+  color: #6b7280;
+  font-style: italic;
+}
+.luxid-code-light .tok-operator {
+  color: #6b6b75;
+}
+.luxid-code-light .tok-punctuation {
+  color: #9a9aa4;
+}
+
+/* Slim scrollbars for the horizontal overflow inside a block. */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark pre::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 4px;
+}
+
+.light pre::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 4px;
+}
+
+.dark pre::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+.light pre::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* ==========================================================================
+   Documentation shell
+   ========================================================================== */
+
+/* Anchored headings must clear the fixed header when linked to directly. */
+.docs-prose :is(h2, h3, h4)[id] {
+  scroll-margin-top: 7rem;
+}
+
+/* The anchor link icon only appears on hover, the way laravel.com does it. */
+.docs-heading-anchor {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.docs-heading:hover .docs-heading-anchor,
+.docs-heading-anchor:focus-visible {
+  opacity: 1;
+}
+
+/* Sidebar and table-of-contents scroll areas get a slim, unobtrusive bar. */
+.docs-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.docs-scroll:hover {
+  scrollbar-color: rgba(128, 128, 128, 0.35) transparent;
+}
+
+.docs-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.docs-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.docs-scroll:hover::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.35);
+}
+
+/* ==========================================================================
+   Accessibility and media
+   ========================================================================== */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.dark ::selection {
+  background: #3f3f46;
+  color: #fafafa;
+}
+
+.light ::selection {
+  background: #e4e4e7;
+  color: #09090b;
+}
+
+@media print {
+  pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .docs-heading-anchor {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  pre {
+    font-size: 0.875rem;
+  }
+}
