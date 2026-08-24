@@ -577,7 +577,7 @@ async fn main() -> luxid::Result<()> {
       <CodeExample
         language="toml"
         code={`[dev-dependencies]
-luxid-testing = "0.1"`}
+luxid-testing = "0.2"`}
       />
 
       <CodeExample

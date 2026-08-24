@@ -117,7 +117,7 @@ export default function IntroductionContent() {
       <P>Being honest about this saves you time later.</P>
 
       <UL>
-        <LI key={0}><strong>It is not stable.</strong> This is 0.1.x. The API will change.</LI>
+        <LI key={0}><strong>It is not stable.</strong> This is 0.2.x. The API will change.</LI>
         <LI key={1}><strong>It is API-first.</strong> Luxid renders JSON. There is no template engine and no asset pipeline yet.</LI>
         <LI key={2}><strong>It does not do background jobs, email, or caching yet.</strong> Those are planned.</LI>
         <LI key={3}><strong>It has one data layer.</strong> Luxid uses SeaORM underneath. You can drop down to raw SeaORM whenever you need to, but you cannot swap in Diesel.</LI>

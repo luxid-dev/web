@@ -11,7 +11,7 @@
 
 export const LUXID = {
   /** Workspace version. Every `luxid-*` crate publishes in lockstep. */
-  version: '0.1.3',
+  version: '0.2.0',
   /** `rust-version` floor from the workspace manifest. */
   rustVersion: '1.94',
   repo: 'https://github.com/luxid-dev/luxid',

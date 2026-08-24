@@ -37,7 +37,7 @@ async fn the_index_is_paginated(db: Db) -> Result<()> {
       <CodeExample
         language="toml"
         code={`[dev-dependencies]
-luxid-testing = "0.1"`}
+luxid-testing = "0.2"`}
       />
 
       <H2>Each test gets a clean database</H2>
