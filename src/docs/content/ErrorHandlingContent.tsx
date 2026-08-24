@@ -87,7 +87,7 @@ async fn show(ctx: HttpContext) -> Result<Response> {
         language="json"
         code={`{
   "type": "https://luxid.rs/errors/validation",
-  "title": "The given data was invalid",
+  "title": "the given data was invalid",
   "status": 422,
   "errors": {
     "email": ["must be a valid email address"],

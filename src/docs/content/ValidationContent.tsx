@@ -196,7 +196,7 @@ pub struct StoreUser {
         language="json"
         code={`{
   "type": "https://luxid.rs/errors/validation",
-  "title": "The given data was invalid",
+  "title": "the given data was invalid",
   "status": 422,
   "errors": {
     "name": ["must be at least 2 characters"],

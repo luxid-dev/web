@@ -296,7 +296,7 @@ async fn it_lists_posts(db: Db) -> Result<()> {
 
 /** The RFC 7807 document a failed validation produces. */
 export const PROBLEM_DOCUMENT = `{ "type": "https://luxid.rs/errors/validation",
-  "title": "The given data was invalid",
+  "title": "the given data was invalid",
   "status": 422,
   "errors": { "email": ["has already been taken"] } }`;
 
