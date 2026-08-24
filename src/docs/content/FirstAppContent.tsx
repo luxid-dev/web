@@ -17,7 +17,7 @@ cd blog`}
 
       <H2>The tour</H2>
 
-      <P>Nine things were created. Here is what each is for, in the order a request touches them.</P>
+      <P>A working application was created. Here are the pieces that matter, in the order a request touches them.</P>
 
       <H3><C>src/main.rs</C></H3>
 
@@ -36,7 +36,7 @@ async fn main() -> luxid::Result<()> {
 }`}
       />
 
-      <P>Four lines of behaviour:</P>
+      <P>Three lines of behaviour:</P>
 
       <OL>
         <OLI key={0} number={1}><C>dotenvy::dotenv()</C> loads a <C>.env</C> file if one exists. The <C>let _ =</C> means "it is fine if there isn't one".</OLI>

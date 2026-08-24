@@ -43,7 +43,7 @@ LUXID_ADDR=127.0.0.1:3000`}
         code={`luxid make:model User -a`}
       />
 
-      <P>Nine files, all registered for you.</P>
+      <P>Eight files, all registered for you.</P>
 
       <P>One of them is a generic CRUD controller we do not want — this project writes its own auth controller instead. Remove it:</P>
 
