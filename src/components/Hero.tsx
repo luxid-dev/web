@@ -68,10 +68,10 @@ export default function Hero() {
               darkMode ? 'text-zinc-400' : 'text-zinc-600'
             }`}
           >
-            A web framework for Rust, shaped by Laravel and — more directly — by AdonisJS.
-            Controllers take one owned context, validation rules reach the database, and a missing
-            row is a <span className={darkMode ? 'text-zinc-200' : 'text-zinc-900'}>404</span> with
-            nothing in the action body.
+            A convention-over-configuration web framework for Rust. Controllers take one owned
+            context, validation rules reach the database, and a missing row is a{' '}
+            <span className={darkMode ? 'text-zinc-200' : 'text-zinc-900'}>404</span> with nothing
+            in the action body.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">

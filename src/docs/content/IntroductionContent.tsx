@@ -8,7 +8,7 @@ export default function IntroductionContent() {
       <H2>What Luxid is</H2>
 
       <Lead>
-        Luxid is a web framework for Rust that takes its shape from Laravel and, more directly, from AdonisJS. If you have used either, most of this will feel familiar. If you have not, that is fine — this course assumes you have not.
+        Luxid is a convention-over-configuration web framework for Rust. Its shape owes a debt to the convention-driven frameworks that came before it — Laravel and, more directly, AdonisJS — so if you have used either, much of this will feel familiar. If you have not, that is fine: this course assumes you have not.
       </Lead>
 
       <P>The pitch is short: <strong>Rust's performance and safety, without Rust's usual web boilerplate.</strong> You should be able to describe a resource and get a working, documented, tested API out the other side.</P>
@@ -110,7 +110,7 @@ export default function IntroductionContent() {
     └── seeders/          development data`}
       />
 
-      <P>If you have used Laravel, this is <C>app/Http/Controllers</C>, <C>app/Models</C>, <C>database/migrations</C> under different names. If you have not, each directory gets its own chapter.</P>
+      <P>If you have worked in a convention-driven framework before, these directories will look familiar under different names. If you have not, each one gets its own chapter.</P>
 
       <H2>What Luxid is not</H2>
 

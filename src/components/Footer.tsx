@@ -86,8 +86,7 @@ export default function Footer() {
             </a>
 
             <p className="mb-6 max-w-xs text-sm leading-6 text-zinc-400">
-              A convention-over-configuration web framework for Rust, built on salvo. Shaped by
-              Laravel, and more directly by AdonisJS.
+              A convention-over-configuration web framework for Rust, built on salvo.
             </p>
 
             <a

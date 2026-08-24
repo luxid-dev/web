@@ -55,7 +55,7 @@ export default function About() {
         </h1>
 
         <p className={`mt-7 text-lg leading-8 ${body}`}>
-          Rust already has good web frameworks. What it did not have was one shaped like Laravel —
+          Rust already has good web frameworks. What it did not have was a convention-driven one —
           where a controller is a controller, a model knows its own relations, and the framework
           answers the boring questions so you do not have to re-answer them per project.
         </p>
@@ -69,7 +69,7 @@ export default function About() {
           >
             loco
           </a>{' '}
-          is Rails-shaped on axum. Luxid is Laravel-shaped on{' '}
+          answers that with a Rails-shaped framework on axum. Luxid answers it on{' '}
           <a
             href="https://salvo.rs"
             target="_blank"
@@ -78,8 +78,9 @@ export default function About() {
           >
             salvo
           </a>
-          , and more directly it follows AdonisJS — which solved the same problem this one has:
-          keeping Laravel's controller ergonomics inside a type system that will not bend.
+          , taking its cues from the convention-driven frameworks that came before it — Laravel and,
+          more directly, AdonisJS. The interesting problem was never copying them. It was keeping
+          those ergonomics inside a type system that will not bend.
         </p>
 
         <ul className={`mt-10 divide-y rounded-xl border ${raised} ${darkMode ? 'divide-zinc-900' : 'divide-zinc-200'}`}>
