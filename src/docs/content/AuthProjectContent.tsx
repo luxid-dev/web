@@ -273,7 +273,6 @@ impl AuthController {
         language="rust"
         code={`pub mod auth_controller;
 pub mod health_controller;
-pub mod users_controller;
 
 // <luxid:modules>`}
       />
