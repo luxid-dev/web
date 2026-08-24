@@ -57,7 +57,19 @@ luxid make:model Post -a       # everything`}
 
       <P><C>-c</C> generates an <strong>API</strong> resource controller (<C>index show store update destroy</C>, no <C>create</C>/<C>edit</C> form actions) and adds one <C>r.resource(...)</C> line to <C>routes.rs</C>.</P>
 
-      <P>Names are normalised, so <C>Post</C>, <C>post</C>, and <C>user_profile</C> all work. Plurals are derived — <C>Category</C> becomes the table <C>categories</C>. The rules are simple and will get irregular nouns wrong; override with <C>#[luxid(name = "...")]</C> on the entity when they do.</P>
+      <P>Names are normalised, so <C>Post</C>, <C>post</C>, and <C>user_profile</C> all work. Plurals are derived — <C>Category</C> becomes the table <C>categories</C>. The rules are simple and will get irregular nouns wrong; when they do, the generated names are ordinary text you can rename before running the migration.</P>
+
+      <P>Separately, the <em>model</em> name that appears in 404s and diagnostics is derived by singularising the table name. Override it on the entity when that reads badly:</P>
+
+      <CodeExample
+        language="rust"
+        code={`#[derive(Clone, Debug, PartialEq, DeriveEntityModel, luxid::Model)]
+#[luxid(name = "Person")]
+#[sea_orm(table_name = "people")]
+pub struct Model { /* ... */ }`}
+      />
+
+      <P>That changes <C>{'{'}"resource": "People"{'}'}</C> to <C>{'{'}"resource": "Person"{'}'}</C> in the problem document. It does not change the table.</P>
 
       <P><strong>Nothing is overwritten.</strong> If any target file exists, the command writes nothing at all and says which clashed — a half-applied generator is worse than one that declined.</P>
 
