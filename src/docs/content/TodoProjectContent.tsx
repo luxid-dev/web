@@ -407,7 +407,9 @@ curl -H "$AUTH" 'localhost:3000/api/todos?status=done'`}
 
       <CodeExample
         language="text"
-        code={`the \`owner\` relation of \`Todo\` was not loaded. Add \`.with("owner")\` to the query.`}
+        code={`the \`owner\` relation of \`Todo\` was not loaded. Add \`.with("owner")\` to
+the query, or call \`luxid::set_strict_relations(false)\` to read unloaded
+relations as empty.`}
       />
 
       <P>That is the N+1 protection from chapter 13 doing its job.</P>
