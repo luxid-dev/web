@@ -66,7 +66,7 @@ identity.claim::<String>("role")?;        // Some("admin")`}
     .singleton(move |_| Jwt::new(&secret).with_ttl(Duration::from_secs(3600)))`}
       />
 
-      <P>The default lifetime is fourteen days.</P>
+      <P>The default lifetime is one hour — <C>Jwt::DEFAULT_TTL</C>. Sessions, which are meant to survive a browser being closed, default to fourteen days instead; chapter 17.</P>
 
       <Callout tone="warning">A token is <strong>signed, not encrypted</strong>. Anyone holding one can read its claims. Put identifiers and roles in there; never put anything secret.</Callout>
 
