@@ -112,7 +112,7 @@ export default function TypeSystem() {
             darkMode ? 'text-zinc-300 hover:text-white' : 'text-zinc-700 hover:text-zinc-900'
           }`}
         >
-          How Lucid types its columns
+          How Luxid types its columns
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </Link>
       </div>

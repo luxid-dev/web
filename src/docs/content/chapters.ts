@@ -148,8 +148,8 @@ export const docsChapters: DocSection[] = [
     ],
   },
   {
-    id: 'lucid',
-    title: 'Lucid — Data',
+    id: 'data',
+    title: 'Data',
     icon: Database,
     chapters: [
       {

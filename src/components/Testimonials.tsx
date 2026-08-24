@@ -41,7 +41,7 @@ const VOICES: ReadonlyArray<Voice> = [
     company: 'AmaliTech',
     avatar:
       'https://media.licdn.com/dms/image/v2/D4D03AQHc4je_3GQkdw/profile-displayphoto-shrink_200_200/B4DZiDB1ASGgAc-/0/1754544953171?e=1776902400&v=beta&t=kN-MuxDItmRFwtdt4ewyXH08vSpVFerIFKtMEhQK1Ts',
-    text: 'Lucid is exactly what I wanted. Relations go in the attribute, scopes are just functions, and a column knows its type — so the wrong comparison is a build error, not a silent empty result at three in the morning.',
+    text: "Luxid's data layer is exactly what I wanted. Relations go in the attribute, scopes are just functions, and a column knows its type — so the wrong comparison is a build error, not a silent empty result at three in the morning.",
   },
   {
     name: 'Illona Addae',

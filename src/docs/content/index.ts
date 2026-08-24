@@ -25,7 +25,7 @@ export { default as MiddlewareContent } from './MiddlewareContent';
 export { default as ServicesContent } from './ServicesContent';
 export { default as ConfigurationContent } from './ConfigurationContent';
 
-/* Lucid — data */
+/* Data */
 export { default as MigrationsContent } from './MigrationsContent';
 export { default as ModelsContent } from './ModelsContent';
 export { default as RelationshipsContent } from './RelationshipsContent';

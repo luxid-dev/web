@@ -138,7 +138,7 @@ export const BUILT: ReadonlyArray<{ title: string; body: string; href: string }>
     href: '/docs/validation',
   },
   {
-    title: 'Lucid models',
+    title: 'Models and relations',
     body: 'Relations, scopes, hooks and typed columns. Eager loading is batched — one query per relation, whatever the page size.',
     href: '/docs/models',
   },
