@@ -572,7 +572,7 @@ async fn main() -> luxid::Result<()> {
 }`}
       />
 
-      <P>Add the test harness:</P>
+      <P><C>luxid new</C> already put the test harness in your <C>Cargo.toml</C> — confirm it is there:</P>
 
       <CodeExample
         language="toml"

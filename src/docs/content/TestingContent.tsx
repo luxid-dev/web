@@ -32,7 +32,7 @@ async fn the_index_is_paginated(db: Db) -> Result<()> {
 }`}
       />
 
-      <P>Add the harness to your <C>Cargo.toml</C>:</P>
+      <P><C>luxid new</C> already declares the harness in your <C>Cargo.toml</C>. If you are adding Luxid to an existing project, add it yourself:</P>
 
       <CodeExample
         language="toml"
