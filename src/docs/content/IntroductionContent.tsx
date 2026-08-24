@@ -42,7 +42,7 @@ export default function IntroductionContent() {
 }`}
       />
 
-      <P><C>HttpContext</C> carries everything the request needs — the request itself, a response builder, route parameters, the authenticated user, the database, your services, configuration, the session. There is no second signature to learn, no set of "extractors" to memorise, and no way to get the argument list wrong.</P>
+      <P><C>HttpContext</C> carries everything the request needs — the request itself, a response builder, route parameters, who the caller is, your services, configuration, the session. There is no second signature to learn, no set of "extractors" to memorise, and no way to get the argument list wrong. (The database is not a field on it: queries reach an ambient connection, so <C>Post::find(id).await?</C> needs no handle. Chapter 11.)</P>
 
       <P>Frameworks that use extractors ask you to write <C>async fn index(State(db): State{'<'}Db{'>'}, Query(page): Query{'<'}Page{'>'})</C> and, when you get it slightly wrong, hand you a page of trait-bound errors. Luxid trades a little magic for signatures that cannot fail to compile in confusing ways.</P>
 
