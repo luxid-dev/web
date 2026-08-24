@@ -93,7 +93,7 @@ LUXID_ADDR=0.0.0.0:3000`}
 
       <CodeExample
         language="text"
-        code={`FROM rust:1.90 AS build
+        code={`FROM rust:1.94 AS build
 WORKDIR /src
 COPY . .
 RUN cargo build --release
