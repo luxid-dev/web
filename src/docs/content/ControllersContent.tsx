@@ -61,7 +61,16 @@ impl PostsController {
 }`}
       />
 
-      <P>The rule is mechanical: an <C>async fn</C> taking exactly one argument that is not <C>self</C> becomes an action. Everything else does not.</P>
+      <P>The rule is mechanical: an <C>async fn</C> whose single argument is an <C>HttpContext</C> <strong>by value</strong> becomes an action. Everything else — including a helper taking <C>&amp;HttpContext</C> — is left alone, which is how actions share logic without accidentally acquiring a route:</P>
+
+      <CodeExample
+        language="rust"
+        code={`// An action.
+async fn show(ctx: HttpContext) -> Result<Response> { /* ... */ }
+
+// A helper. Same block, no route.
+async fn find_owned(ctx: &HttpContext) -> Result<Post> { /* ... */ }`}
+      />
 
       <H2>What is in the context</H2>
 
