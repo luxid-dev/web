@@ -6,10 +6,10 @@ export default function TodoProjectContent() {
   return (
     <>
       <Lead>
-        The second project adds what chapter 22 did not need: relations, ownership, scopes, filtering, and pagination. It continues from the auth app — same project, same users.
+        The second project adds what chapter 23 did not need: relations, ownership, scopes, filtering, and pagination. It continues from the auth app — same project, same users.
       </Lead>
 
-      <P>Everything here assumes you finished chapter 22.</P>
+      <P>Everything here assumes you finished chapter 23.</P>
 
       <H2>1. Scaffold the todo</H2>
 
