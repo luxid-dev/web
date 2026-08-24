@@ -240,7 +240,7 @@ pub age: Option<i64>,`}
 └── post.rs      StorePost, UpdatePost`}
       />
 
-      <P><C>luxid make:model User -a</C> generates the file with both structs and empty rule lists. <C>cargo luxid db:sync</C> can refresh the field list from the schema, and touches only what lies between the markers — the rules you wrote survive.</P>
+      <P><C>luxid make:model User -a</C> generates the file with both structs and a commented-out example rule. Unlike entities and factories, validators are <strong>not</strong> touched by <C>cargo luxid db:sync</C> — they carry no <C>{'<'}luxid:fields{'>'}</C> markers, because what an endpoint accepts is a decision, not a reflection of the table.</P>
 
       <H2>Building errors by hand</H2>
 
