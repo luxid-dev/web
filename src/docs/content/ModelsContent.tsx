@@ -74,6 +74,8 @@ Post::all().await?              // Vec<Post>
 Post::count_all().await?        // u64`}
       />
 
+      <P>These come from the <C>Record</C> trait, which <C>#[derive(Model)]</C> implements for you. Like any Rust trait it has to be in scope to be called — <C>use luxid::prelude::*;</C> brings it in, which is why every generated file starts with that line. If <C>Post::find</C> does not resolve, a missing prelude import is the usual reason.</P>
+
       <P><C>find_or_fail</C> is the one you will use most, because it makes actions short:</P>
 
       <CodeExample
