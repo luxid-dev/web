@@ -117,11 +117,13 @@ impl BlockRobots {
         code={`r.resource("/posts", PostsController).middleware(Auth::jwt());`}
       />
 
-      <P>Several at once:</P>
+      <P>Several at once — <C>middleware</C> returns the route, so the calls chain:</P>
 
       <CodeExample
         language="rust"
-        code={`r.get("/admin", AdminController::show).middleware((Auth::jwt(), Role::admin()));`}
+        code={`r.get("/admin", AdminController::show)
+    .middleware(Auth::jwt())
+    .middleware(Role::admin());`}
       />
 
       <P>Middleware is attached by <strong>value</strong>, not by a string name, so a typo is a compile error rather than a route that silently runs unguarded.</P>
