@@ -20,7 +20,7 @@ interface DocsLayoutProps {
 
 /** Where a chapter's source lives, for the "Edit this page" link. */
 const editUrl = (doc: DocChapter): string =>
-  `https://github.com/luxid-dev/luxid/edit/main/web/src/docs/content/${doc.content}.tsx`;
+  `https://github.com/luxid-dev/web/edit/main/src/docs/content/${doc.content}.tsx`;
 
 /** A slim bar under the header showing how far through the chapter you are. */
 function ReadingProgress() {
