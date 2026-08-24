@@ -7,7 +7,7 @@ import { BUILT, NOT_BUILT } from '@/content/framework';
 /**
  * What the framework does, and — immediately after — what it does not.
  *
- * The second list is the point. Luxid is 0.1.2 and says so, and a feature grid
+ * The second list is the point. Luxid is 0.1.x and says so, and a feature grid
  * that only lists wins would be the first dishonest thing on the page. Each
  * card links to the chapter that covers it, so the grid doubles as a way in.
  */
